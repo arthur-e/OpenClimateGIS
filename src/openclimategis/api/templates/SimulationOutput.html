@@ -14,7 +14,7 @@
 
 {% block content %}
     {% if is_collection %}
-        <table frame=void rules=all>
+        <table frame=void rules=void>
           <tbody>
             {% comment %}Create table for a list of simulation outputs{% endcomment %}
             <tr>
@@ -26,7 +26,7 @@
                 <th>Run</th>
             </tr>
             {% for listitem in data %}
-            <tr>
+            <tr class="{% cycle 'row-cls1' 'row-cls2' %}">
                 <td>
                     <a href="{% url simulation_single id=listitem.id emitter_format='html' %}">
                         {{ listitem.id }}

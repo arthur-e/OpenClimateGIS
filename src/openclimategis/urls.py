@@ -22,7 +22,8 @@ urlpatterns = patterns('',
     # Query Builder web application
     url( # example: /builder
         r'^builder',
-        'api.views.display_query_builder_app'
+        'api.views.display_query_builder_app',
+        name='query_builder'
     ),
 
 )

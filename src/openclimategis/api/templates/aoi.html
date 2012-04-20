@@ -13,7 +13,7 @@
 {% endblock breadcrumbs %}
 
 {% block content %}
-    <table frame=void rules=all>
+    <table frame=void rules=void>
     <tbody>
     {% if is_collection %}
         {% comment %}Create table for a list of Area-of-Interest resources{% endcomment %}
@@ -23,7 +23,7 @@
             <th># of Subareas</th>
         </tr>
         {% for listitem in data %}
-        <tr>
+        <tr class="{% cycle 'row-cls1' 'row-cls2' %}">
             <td><a href="{% url aoi_single code=listitem.code emitter_format='html' %}">{{ listitem.code }}</a></td>
             <td>{{ listitem.desc }}</td>
             <td>{{ listitem.geom_count }}</td>
